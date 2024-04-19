@@ -2,7 +2,7 @@ function CartWidget() {
     
     return (
 
-            <a href="#" className="">carrito de compras</a>
+            <a href="#" className="">Carrito de compras</a>
     )
 }
 
