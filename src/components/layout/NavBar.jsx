@@ -7,8 +7,8 @@ function NavBar() {
                 <div className="items-center hidden md:flex md:gap-4">
                 <Link to="/">Inicio</Link>
                 <Link to="/Agentes">Agentes</Link>
-                <Link to="roles/Iniciadores">Iniciadores</Link>
-                <Link to="roles/Controladores">Controladores</Link>
+                <Link to="/Rol/Iniciador">Iniciadores</Link>
+                <Link to="/Rol/Controlador">Controladores</Link>
                 </div>
                 <CartWidget />
             </nav>
