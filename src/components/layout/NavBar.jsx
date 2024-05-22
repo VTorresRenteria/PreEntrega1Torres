@@ -16,6 +16,7 @@ function NavBar() {
                 <div className="items-center hidden md:flex md:gap-4">
                     <Link to="/Rol/Iniciador">Iniciadores</Link>
                     <Link to="/Rol/Duelista">Duelistas</Link>
+                    <Link to="/Rol/Centinela">Centinelas</Link>
                     <CartWidget />
                 </div>
                 <MenuIcon onClick={handleClick} width={20} height={20} className="md:hidden" />
@@ -23,6 +24,7 @@ function NavBar() {
             <nav className={`md:-left-full fixed bg-white text-black flex flex-col z-10 w-1/3 top-0 transition-all duration-300 h-full p-2 items-center gap-4  ${open ? "left-0" : "-left-full"}`}>
                 <Link onClick={handleClick} to="/Rol/Iniciador">Iniciadores</Link>
                 <Link onClick={handleClick} to="/Rol/Duelista">Duelistas</Link>
+                <Link onClick={handleClick} to="/Rol/Centinela">Centinelas</Link>
                 <CartWidget />
             </nav>
         </>

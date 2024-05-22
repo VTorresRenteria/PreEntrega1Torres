@@ -36,6 +36,9 @@ function Carrito() {
                 <div>
                     <input className="text-black" type="text" placeholder="email" />
                 </div>
+                <div>
+                    <input className="text-black" type="text" placeholder="email" />
+                </div>
                 <button>Comprar</button>
             </form>
         </div>
