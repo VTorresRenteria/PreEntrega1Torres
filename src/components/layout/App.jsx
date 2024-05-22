@@ -1,16 +1,24 @@
+import { BrowserRouter } from "react-router-dom"
 import Header from "./Header.jsx"
 import Main from "./Main.jsx"
-import { BrowserRouter } from "react-router-dom"
+import Footer from "./Footer.jsx"
+import CarritoProvider from "../../contexto.jsx"
+import "../../contexto.jsx"
 
 
-  function App() {
+function App() {
 
-    return (
-      <BrowserRouter>
-        <Header/>
-        <Main/>
-      </BrowserRouter>
-    )
-  }
+  return (
+    <BrowserRouter>
+
+      <CarritoProvider>
+        <Header />
+        <Main />
+        <Footer />
+      </CarritoProvider>
+      
+    </BrowserRouter>
+  )
+}
 
 export default App

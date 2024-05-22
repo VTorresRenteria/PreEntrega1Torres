@@ -1,8 +1,16 @@
-function CartWidget() {
-    
-    return (
+import { ShoppingCart } from "lucide-react"
+import useCart from "../../hooks/useCart"
+import { Link } from "react-router-dom"
 
-            <a href="#" className="">Carrito de compras</a>
+function CartWidget() {
+
+const elValorDelContexto = useCart()
+
+    return (
+        <Link to="/Carrito" className="flex gap-2"> 
+            <ShoppingCart />
+            {elValorDelContexto.cantCarrito}
+            </Link>
     )
 }
 

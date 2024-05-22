@@ -1,13 +1,8 @@
-import ItemListContainer from "./ItemListContainer"
+import UsersCardContainer from "../widgets/UsersCardContainer"
 
 function Agentes() {
     return (
-        <div>
-        <h2>Agentes</h2>
-        <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 users">
-            <ItemListContainer />
-        </section>
-        </div>
+            <UsersCardContainer />
     )
 }
 

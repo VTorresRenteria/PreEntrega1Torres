@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Agente from "./Agente";
+import { getProductDetail } from "../../utils";
 
 
 function AgenteContainer() {
 
-    const { uuid } = useParams()
+    const { id } = useParams()
     const [Agent, setAgent] = useState({})
 
     useEffect(() => {
-        fetch("https://valorant-api.com/v1/agents/" + uuid + "?isPlayableCharacter&language=es-MX")
-            .then((res) => {
-                return res.json()
-            })
-            .then((Agente) => {
-                setAgent(Agente.data)
-            })
+        getProductDetail(id)
+        .then((resultado)=>{
+            setAgent(resultado)
+        })
     }, []);
 
     return (
-        <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-md p-4">
+        <div>
             <Agente Agente={Agent} />
         </div>
     )
