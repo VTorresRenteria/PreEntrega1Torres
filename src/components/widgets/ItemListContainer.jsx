@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import UserCardList from "./UserCardList"
+import ItemList from "./ItemList"
 import { getProducts, getProductsFromCategories } from "../../utils"
 
 
-function UsersCardContainer() {
+function ItemListContainer() {
 
     const [characters, setCharacters] = useState([])
     const params = useParams()
@@ -28,10 +28,10 @@ function UsersCardContainer() {
 
     return (
         <div className="">
-            <h2 className="mb-5 text-4xl font-bold">Agentes</h2>
-            <UserCardList characters={characters} />
+            <h2 className="mb-5 text-4xl font-bold text-center">Agentes</h2>
+            <ItemList characters={characters} />
         </div>
     )
 }
 
-export default UsersCardContainer
+export default ItemListContainer

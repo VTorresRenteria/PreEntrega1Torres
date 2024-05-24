@@ -1,8 +1,8 @@
 import { toast } from "react-toastify"
 import useCart from "../../hooks/useCart"
-import Contador from "../widgets/Contador"
+import ItemQuantitySelector from "../widgets/ItemQuantitySelector"
 
-function Agente(props) {
+function ItemDetail(props) {
 
     const valorDelContexto = useCart()
 
@@ -13,7 +13,6 @@ function Agente(props) {
 
     return (
         <>
-            <div className="max-w-4xl mx-auto bg-black text-white shadow-lg rounded-lg p-6">
                 <p className="text-2xl font-bold mb-4 text-center lg:text-left">Detalle de Agente</p>
                 <h2 className="text-xl font-semibold mb-6 text-center lg:text-left">{props.Agente.displayName}</h2>
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -29,11 +28,10 @@ function Agente(props) {
                             <h3 className="text-lg font-medium">Descripción</h3>
                             <p className="text-gray-400">{props.Agente.description}</p>
                         </div>
-                        <Contador handleConfirm={handleConfirm} />
+                        <ItemQuantitySelector handleConfirm={handleConfirm} />
                     </div>
                 </section>
-            </div>
         </>
     )
 }
-export default Agente
+export default ItemDetail

@@ -11,8 +11,11 @@ function NavBar() {
     }
 
     return (
-        <>
-            <nav className="flex items-center gap-4">
+        <header className="p-4 bg-red-600 text-white shadow-md">
+            <nav className="flex items-center gap-4 ">
+                <div className="container flex justify-between mx-auto">
+                    <Link to="/"><h1>Valorant Agentes</h1></Link>
+                </div>
                 <div className="items-center hidden md:flex md:gap-4">
                     <Link to="/Rol/Iniciador">Iniciadores</Link>
                     <Link to="/Rol/Duelista">Duelistas</Link>
@@ -27,7 +30,7 @@ function NavBar() {
                 <Link onClick={handleClick} to="/Rol/Centinela">Centinelas</Link>
                 <CartWidget />
             </nav>
-        </>
+        </header>
     )
 }
 

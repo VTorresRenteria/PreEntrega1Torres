@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { contexto } from "../contexto";
+import { CartContext } from "../CartContext";
 
 const useCart = () => {
-    const valorActual = useContext(contexto)
+    const valorActual = useContext(CartContext)
     return valorActual
 }
 

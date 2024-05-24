@@ -1,16 +1,16 @@
 import { Routes, Route } from 'react-router-dom'
-import AgenteContainer from '../pages/AgenteContainer'
-import Carrito from '../pages/Carrito'
-import UsersCardContainer from '../widgets/UsersCardContainer'
+import ItemDetailContainer from '../pages/ItemDetailContainer'
+import Cart from '../pages/Cart'
+import ItemListContainer from '../widgets/ItemListContainer'
 
 function Main() {
     return (
-        <main className='p-4 text-white grow mi-main bg-black'>
+        <main className='p-4 text-white grow bg-black min-h-screen'>
             <Routes>
-                <Route path="/" element={<UsersCardContainer />} />
-                <Route path="/Rol/:role" element={<UsersCardContainer />} />
-                <Route path="/Agentes/:id" element={<AgenteContainer />} />
-                <Route path="/Carrito" element={<Carrito/>} />
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/Rol/:role" element={<ItemListContainer />} />
+                <Route path="/Agentes/:id" element={<ItemDetailContainer />} />
+                <Route path="/Carrito" element={<Cart/>} />
                 <Route path="*" element={<p>No encontrado</p>} />
             </Routes>
         </main>

@@ -1,9 +1,12 @@
 import { BrowserRouter } from "react-router-dom"
-import Header from "./Header.jsx"
 import Main from "./Main.jsx"
 import Footer from "./Footer.jsx"
-import CarritoProvider from "../../contexto.jsx"
-import "../../contexto.jsx"
+import CarritoProvider from "../../CartContext.jsx"
+import "../../CartContext.jsx"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+import NavBar from "./NavBar.jsx"
+
 
 
 function App() {
@@ -12,10 +15,11 @@ function App() {
     <BrowserRouter>
 
       <CarritoProvider>
-        <Header />
+        <NavBar />
         <Main />
         <Footer />
       </CarritoProvider>
+      <ToastContainer/>
       
     </BrowserRouter>
   )

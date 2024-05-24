@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import Agente from "./Agente";
+import ItemDetail from "./ItemDetail";
 import { getProductDetail } from "../../utils";
 
 
-function AgenteContainer() {
+function ItemDetailContainer() {
 
     const { id } = useParams()
     const [Agent, setAgent] = useState({})
@@ -18,10 +18,10 @@ function AgenteContainer() {
 
     return (
         <div>
-            <Agente Agente={Agent} />
+            <ItemDetail Agente={Agent} />
         </div>
     )
 
 }
 
-export default AgenteContainer
+export default ItemDetailContainer

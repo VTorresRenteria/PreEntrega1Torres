@@ -64,11 +64,7 @@ export const createSale = () => {
     const salesCollection = collection(db, "ventas")
 
     const venta = {
-        items: [/* esto sale del carrito */],
-        usuario: { nombre: "Horacio", tel: "123456789", email: "test@test.com" },
-        fechaDeCompra: serverTimestamp(),
-        status: "pendiente",
-        total: 0
+
     }
 
     const consulta = addDoc(salesCollection, venta)
@@ -82,5 +78,3 @@ export const createSale = () => {
         })
 
 }
-
-//export const updateProductStock = () => {}
