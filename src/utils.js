@@ -1,4 +1,4 @@
-import { collection, getDocs, getDoc, doc, getFirestore, query, where, addDoc, serverTimestamp } from "firebase/firestore"
+import { collection, getDocs, getDoc, doc, getFirestore, query, where, addDoc } from "firebase/firestore"
 import { app } from "./firebase"
 
 
@@ -30,12 +30,12 @@ export const getProductsFromCategories = (rol) => {
 
     return consulta
         .then((resultado) => {
-            const productos = resultado.docs.map(doc => {
-                const producto = doc.data()
-                producto.id = doc.id
-                return producto
+            const agentes = resultado.docs.map(doc => {
+                const agente = doc.data()
+                agente.id = doc.id
+                return agente
             })
-            return productos
+            return agentes
         })
         .catch((error) => {
             console.log(error)
@@ -44,8 +44,8 @@ export const getProductsFromCategories = (rol) => {
 
 export const getProductDetail = (id) => {
     const db = getFirestore(app)
-    const productsCollection = collection(db, "agentes")
-const filtro = doc(productsCollection, id)
+    const agentesCollection = collection(db, "agentes")
+const filtro = doc(agentesCollection, id)
     const consulta = getDoc(filtro)
 
     return consulta
@@ -59,22 +59,20 @@ const filtro = doc(productsCollection, id)
         })
 }
 
-export const createSale = () => {
-    const db = getFirestore(app)
-    const salesCollection = collection(db, "ventas")
+export const createSale = async (compra) => {
+    const db = getFirestore();
+    const salesCollection = collection(db, "ventas");
 
     const venta = {
+        cliente: compra.cliente,
+        items: compra.items,
+    };
 
+    try {
+        const docRef = await addDoc(salesCollection, venta);
+        return docRef.id;
+    } catch (error) {
+        console.error("Error al crear la venta:", error);
+        return null;
     }
-
-    const consulta = addDoc(salesCollection, venta)
-
-    consulta
-        .then((resultado) => {
-            console.log(resultado)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-
-}
+};
